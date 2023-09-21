@@ -18,7 +18,7 @@ export class WeatherByCityNameComponent {
 
   temperature! : Temperature ;
 
-  main !: any;
+  
 
   constructor(
      private weatherService : WeatherService,
