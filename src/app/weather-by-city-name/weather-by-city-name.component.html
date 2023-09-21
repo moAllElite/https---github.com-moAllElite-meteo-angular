@@ -1,0 +1,70 @@
+
+<div class="hero-body my-font">
+  <section class="section">
+    <div class="field has-addons columns is-centered ">
+      <p class="control">
+        <input  [(ngModel)]="city"  class="input my-font  is-rounded ms-2" type="text" placeholder="Enter the city name here    ">
+      </p>
+      <p class="control" >
+        <button (click)="getData()" class="button is-link my-font ">
+          City name
+        </button>
+      </p>
+    </div>
+    <div >
+
+      <div class=" columns m-6" >
+        <div class="column " >
+          <img [src]="url+temperature.weather[0].icon+extension" width="100"/>
+
+        </div>
+        <div class="column mt-4">
+          <h1> {{temperature.name}}</h1>
+            <h2 class="mt-0">
+              {{ temperature.main.temp.toFixed(0)}}ºC
+            </h2>
+
+        </div>
+        <div  class="column mt-4"  >
+            <h2 class="animate__animated animate__tada">
+              {{temperature.weather[0].description}}
+            </h2>
+            </div>
+      </div>
+      <div class="columns"    >
+          <div class="column"  >
+            <h2 class="animate__animated animate__bounce " id="temp_min" >
+              {{temperature.main.temp_min.toFixed(0)}}ºC
+            </h2>
+            <fa-icon [icon]="['fas', 'temperature-low']" size="lg" ></fa-icon>
+          </div>
+          <div class="column"  >
+            <h2 class="animate__animated animate__bounce " id="temp_min" >
+              {{temperature.main.temp_max.toFixed(0)}}ºC
+            </h2>
+            <fa-icon [icon]="['fas', 'temperature-high']" size="lg" ></fa-icon>
+          </div>
+          <div class="column"  >
+            <h2 class="animate__animated animate__bounce " id="temp_min" >
+              {{temperature.wind.speed.toFixed(0)}}
+            </h2>
+            <fa-icon [icon]="['fas', 'wind']" size="lg" ></fa-icon>
+          </div>
+          <div class="column"  >
+            <h2 class="animate__animated animate__bounce " id="temp_min" >
+              {{temperature.clouds.all}}
+            </h2>
+            <fa-icon [icon]="['fas', 'cloud']" size="lg" ></fa-icon>
+
+          </div>
+          <div class="mt-2"  >
+            <h2 class="animate__animated animate__bounce " id="temp_min" >
+              {{temperature.coord.lat.toFixed(2) }} - {{temperature.coord.lon.toFixed(2)}}
+            </h2>
+            <fa-icon class="ml-5" [icon]="['fas', 'location-dot']" size="lg" ></fa-icon>
+          </div>
+      </div>
+
+    </div>
+</section>
+</div>
