@@ -7,14 +7,14 @@
       </p>
       <p class="control" >
         <button (click)="getData()" class="button is-link my-font ">
-          City name
+          City name <fa-icon class="ml-3" [icon]="['fas','search']"></fa-icon>
         </button>
       </p>
     </div>
     <div *ngIf="temperature">
 
       <div class=" columns m-6" >
-        <div class="column " >
+        <div class="column  m-0" >
           <img [src]="url+temperature.weather[0].icon+extension" width="100"/>
 
         </div>
@@ -36,32 +36,33 @@
             <h2 class="animate__animated animate__bounce " id="temp_min" >
               {{temperature.main.temp_min.toFixed(0)}}ºC
             </h2>
-            <fa-icon [icon]="['fas', 'temperature-low']" size="lg" ></fa-icon>
+            <fa-icon class="ml-2" [icon]="['fas', 'temperature-low']" size="lg" ></fa-icon>
           </div>
           <div class="column"  >
             <h2 class="animate__animated animate__bounce " id="temp_min" >
               {{temperature.main.temp_max.toFixed(0)}}ºC
             </h2>
-            <fa-icon [icon]="['fas', 'temperature-high']" size="lg" ></fa-icon>
+            <fa-icon class="ml-2" [icon]="['fas', 'temperature-high']" size="lg" ></fa-icon>
           </div>
           <div class="column"  >
             <h2 class="animate__animated animate__bounce " id="temp_min" >
               {{temperature.wind.speed.toFixed(0)}}
             </h2>
-            <fa-icon [icon]="['fas', 'wind']" size="lg" ></fa-icon>
+            <fa-icon  [icon]="['fas', 'wind']" size="lg" ></fa-icon>
           </div>
           <div class="column"  >
             <h2 class="animate__animated animate__bounce " id="temp_min" >
               {{temperature.clouds.all}}
             </h2>
-            <fa-icon [icon]="['fas', 'cloud']" size="lg" ></fa-icon>
+            <fa-icon  [icon]="['fas', 'cloud']" size="lg" ></fa-icon>
 
           </div>
-          <div class="mt-2"  >
+          <div class="mt-3"  >
             <h2 class="animate__animated animate__bounce " id="temp_min" >
-              {{temperature.coord.lat.toFixed(2) }} - {{temperature.coord.lon.toFixed(2)}}
+             lat : {{temperature.coord.lat.toFixed(2) }} / long : {{temperature.coord.lon.toFixed(2)}}
             </h2>
-            <fa-icon class="ml-5" [icon]="['fas', 'location-dot']" size="lg" ></fa-icon>
+            <fa-icon class="ml-6" [icon]="['fas', 'location-dot']" size="lg" ></fa-icon>
+            <fa-icon class="ml-6" [icon]="['fas', 'map-location-dot']" size="lg" ></fa-icon>
           </div>
       </div>
 
